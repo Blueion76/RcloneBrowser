@@ -81,8 +81,7 @@ jobs:
           cmake .. -DCMAKE_PREFIX_PATH:PATH=/usr/local/opt/qt5
           make -j $(nproc)
           cd build
-          /usr/local/opt/qt@5/bin/macdeployqt rclone-browser.app -executable="rclone-browser.app/Contents/MacOS/rclone-browser" -qmldir=../src/
-          mv rclone-browser.app Rclone\ Browser.app
+          /opt/homebrew/opt/qt@5/bin/macdeployqt rclone-browser.app -executable="rclone-browser.app/Contents/MacOS/rclone-browser" -qmldir=../src/
       - uses: actions/upload-artifact@v3
         with:
           name: macos
